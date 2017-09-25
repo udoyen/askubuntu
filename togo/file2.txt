@@ -1,0 +1,6 @@
+  3 Africa
+  3 America
+  3 Asia
+  4 Antarctica
+  4 Oceania
+  7 Europe

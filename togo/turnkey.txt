@@ -1,0 +1,94 @@
+First thing to consider is whether your using a `turnkey Linux` version, Now if yes, do `step 1` else skip to `step 2`.
+
+Step 1:
+
+1. Install the `tklpatch` from source:
+
+           git clone git://github.com/turnkeylinux/tklpatch.git
+           
+           cd tklpatch
+           
+           make install
+           
+2. Install dependencies:
+
+           install squashfs-tools genisoimage
+           
+3. Go `step 2 option 3`
+
+
+Step 2:
+
+1. Update your system:
+
+           sudo apt update
+           
+2. Install `tklpatch`:
+
+           sudo apt install tklpatch
+           
+3. Install `qemu`:
+
+           sudo apt install qemu
+           
+4. Create a turnkey raw disk:
+
+           qemu-img convert -f vmdk turnkey-core.vmdk -O raw turnkey-core.raw
+
+5. Mount the `raw disk`:
+
+           mkdir turnkey-core.mount
+           mount -o loop turnkey-core.raw turnkey-core.mount
+           
+6. If your VM has partitions:
+
+           loopdev=$(losetup -s -f turnkey-core.raw)
+
+           apt-get install kpartx
+           kpartx -a $loopdev
+
+           # p1 refers to the first partition (rootfs)
+           mkdir turnkey-core.mount
+           mount /dev/mapper/$(basename $loopdev)p1 turnkey-core.mount
+           
+7. Make a copy of the root filesystem and unmount the loopback:
+
+           mkdir turnkey-core.rootfs
+           rsync -a -t -r -S -I turnkey-core.mount/ turnkey-core.rootfs
+
+           umount -d turnkey-core.mount
+
+           # If your VM had partitions (GOTCHA 1):
+           kpartx -d $loopdev
+           losetup -d $loopdev
+           
+8. Update filesystem:
+
+           cat>turnkey-core.rootfs/etc/fstab<<EOF
+           aufs / aufs rw 0 0
+           tmpfs /tmp tmpfs nosuid,nodev 0 0
+           EOF
+           
+           
+9. If your VM uses a kernel optimized for virtualization (like the one included in the TurnKey VM builds), you need to replace it with a generic kernel, and also remove vmware-tools if installed:
+
+           tklpatch-chroot turnkey-core.rootfs
+
+           # inside the chroot
+           apt update
+           apt install linux-image-generic
+           dpkg --purge $(dpkg-query --showformat='${Package}\n' -W 'vmware-tools*')
+           dpkg --purge $(dpkg-query --showformat='${Package}\n' -W '*-virtual')
+
+           exit
+           
+10. Finally, prepare the cdroot and generate the ISO:
+
+           tklpatch-prepare-cdroot turnkey-core.rootfs/
+           tklpatch-geniso turnkey-core.cdroot/
+           
+11. 
+
+
+https://www.turnkeylinux.org/blog/convert-vm-iso
+https://www.turnkeylinux.org/docs/tklpatch/installation

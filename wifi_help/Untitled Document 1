@@ -1,0 +1,852 @@
+george@george-HP-Pavilion-17-Notebook-PC:~$ sudo apt-get update; sudo apt-get install usbutils pciutils hwinfo grep rfkill; sudo lshw -C network; rfkill list; sudo iwlist scan | grep -Ei 'chan|ssid'; cat /etc/network/interfaces; cat /etc/lsb-release; lspci -nnk | grep -iA2 net; lsusb; nmcli nm status; sudo lshw -short; uname -a; sudo updatedb; dmesg | grep -E  '02:00|80211|acx|at76|ath|b43|bcm|brcm|CX|eth|ipw|ireless|irmware|isl|lbtf|orinoco|ndiswrapper|NPE|ound|p54|prism|rror|rtl|RTL|rt2|RT2|rt3|RT3|rt5|RT5|rt6|RT6|rt7|RT7|usb|witch|wl';sudo dmidecode|grep -E 'anufact|roduct|erial|elease'; iwconfig; grep -E '80211|acx|at76|ath|b43|bcm|brcm|CX|eth|ipw|irmware|isl|lbtf|orinoco|ndiswrapper|NPE|p54|prism|rtl|rt2|rt3|rt6|rt7|wmi|witch|wl' /etc/modprobe.d/*; cat /var/lib/NetworkManager/NetworkManager.state; sudo hwinfo --netcard ; ps -aux|grep -E 'wpa|icd|etwork'; netstat -rn ; cat /etc/resolv.conf; ls -lia /boot; grep tmpfs /etc/fstab; ubuntu-support-status; sudo update-pciids; sudo update-usbids; sudo lsmod
+Hit:1 http://ppa.launchpad.net/damien-moore/codeblocks-stable/ubuntu xenial InRelease                                        
+Hit:2 http://security.ubuntu.com/ubuntu xenial-security InRelease                                                            
+Hit:3 http://ng.archive.ubuntu.com/ubuntu xenial InRelease                                                                   
+Hit:4 http://repo.mysql.com/apt/ubuntu trusty InRelease                                                                      
+Hit:6 http://download.virtualbox.org/virtualbox/debian xenial InRelease                                                      
+Ign:7 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease                                                    
+Hit:8 http://download.mono-project.com/repo/debian wheezy InRelease                                                          
+Hit:9 http://apt.postgresql.org/pub/repos/apt trusty-pgdg InRelease                                                          
+Hit:11 http://ppa.launchpad.net/git-core/ppa/ubuntu xenial InRelease                                                         
+Hit:12 http://ng.archive.ubuntu.com/ubuntu xenial-updates InRelease                                                          
+Ign:13 http://dl.google.com/linux/chrome/deb stable InRelease                                                                
+Hit:14 https://apt-mo.trafficmanager.net/repos/dotnet xenial InRelease                                                       
+Hit:15 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release                                                     
+Hit:16 http://ppa.launchpad.net/inkscape.dev/stable/ubuntu xenial InRelease                                                  
+Hit:17 https://packages.microsoft.com/ubuntu/16.04/prod xenial InRelease                                              
+Hit:18 https://deb.nodesource.com/node_6.x xenial InRelease                                                                  
+Hit:19 https://apt.dockerproject.org/repo ubuntu-trusty InRelease                                                            
+Hit:20 http://ng.archive.ubuntu.com/ubuntu xenial-backports InRelease                                                        
+Hit:21 https://packages.microsoft.com/ubuntu/16.04/mssql-server xenial InRelease                                             
+Hit:5 http://screenshots.getdeb.net trusty-getdeb InRelease                                     
+Hit:23 http://ppa.launchpad.net/inkscape.dev/stable/ubuntu trusty InRelease                                                  
+Hit:24 http://dl.google.com/linux/chrome/deb stable Release                                                                  
+Hit:25 http://ppa.launchpad.net/maarten-baert/simplescreenrecorder/ubuntu xenial InRelease                                   
+Ign:10 http://toolbelt.heroku.com/ubuntu ./ InRelease                                                
+Hit:26 http://ppa.launchpad.net/noobslab/apps/ubuntu xenial InRelease                                                        
+Hit:29 http://ppa.launchpad.net/noobslab/themes/ubuntu xenial InRelease                                
+Hit:30 https://deb.opera.com/opera-stable stable InRelease                                                                   
+Hit:31 http://ppa.launchpad.net/noobslab/themes/ubuntu trusty InRelease                                            
+Hit:28 http://toolbelt.heroku.com/ubuntu ./ Release                       
+Hit:33 http://ppa.launchpad.net/numix/ppa/ubuntu trusty InRelease              
+Hit:34 http://ppa.launchpad.net/numix/ppa/ubuntu xenial InRelease              
+Hit:35 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
+Hit:36 http://ppa.launchpad.net/ondrej/php/ubuntu xenial InRelease
+Hit:37 http://ppa.launchpad.net/ondrej/php/ubuntu trusty InRelease             
+Hit:38 http://ppa.launchpad.net/snwh/pulp/ubuntu xenial InRelease              
+Hit:39 http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu xenial InRelease       
+Hit:40 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease
+Hit:41 http://ppa.launchpad.net/webupd8team/java/ubuntu trusty InRelease       
+Reading package lists... Done                      
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+pciutils is already the newest version (1:3.3.1-1.1ubuntu1).
+rfkill is already the newest version (0.5-1ubuntu3).
+usbutils is already the newest version (1:007-4).
+hwinfo is already the newest version (21.23-1).
+grep is already the newest version (2.25-1~16.04.1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+  *-network               
+       description: Ethernet interface
+       product: RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller
+       vendor: Realtek Semiconductor Co., Ltd.
+       physical id: 0
+       bus info: pci@0000:08:00.0
+       logical name: eth0
+       version: 08
+       serial: 8c:dc:d4:7d:06:ae
+       size: 10Mbit/s
+       capacity: 100Mbit/s
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pm msi pciexpress msix vpd bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=r8169 driverversion=2.3LK-NAPI duplex=half firmware=rtl8106e-2_0.0.1 04/23/13 latency=0 link=no multicast=yes port=MII speed=10Mbit/s
+       resources: irq:42 ioport:3000(size=256) memory:b2404000-b2404fff memory:b2400000-b2403fff
+  *-network:0 DISABLED
+       description: Ethernet interface
+       physical id: 3
+       logical name: virbr0-nic
+       serial: 52:54:00:95:69:a3
+       size: 10Mbit/s
+       capabilities: ethernet physical
+       configuration: autonegotiation=off broadcast=yes driver=tun driverversion=1.6 duplex=full link=no multicast=yes port=twisted pair speed=10Mbit/s
+  *-network:1
+       description: Ethernet interface
+       physical id: 4
+       logical name: enp0s20u6
+       serial: 02:0c:e7:0b:01:02
+       capabilities: ethernet physical
+       configuration: broadcast=yes driver=cdc_ether driverversion=22-Aug-2005 firmware=CDC Ethernet Device ip=192.168.0.137 link=yes multicast=yes
+lo        Interface doesn't support scanning.
+
+vmnet1    Interface doesn't support scanning.
+
+virbr0    Interface doesn't support scanning.
+
+virbr0-nic  Interface doesn't support scanning.
+
+vmnet8    Interface doesn't support scanning.
+
+docker0   Interface doesn't support scanning.
+
+enp0s20u6  Interface doesn't support scanning.
+
+eth0      Interface doesn't support scanning.
+
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
+08:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller [10ec:8136] (rev 08)
+	DeviceName: Realtek PCIe FE Family Controller
+	Subsystem: Hewlett-Packard Company RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller [103c:227f]
+	Kernel driver in use: r8169
+	Kernel modules: r8169
+Bus 001 Device 004: ID 04f2:b40e Chicony Electronics Co., Ltd HP Truevision HD camera
+Bus 001 Device 003: ID 0461:4e22 Primax Electronics, Ltd 
+Bus 001 Device 002: ID 8087:8000 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 002: ID 19d2:1405 ZTE WCDMA Technologies MSM 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Error: Object 'nm' is unknown, try 'nmcli help'.
+H/W path               Device      Class          Description
+=============================================================
+                                   system         HP Pavilion 17 Notebook PC (J9N55UAR#ABA)
+/0                                 bus            227F
+/0/2                               memory         8GiB System Memory
+/0/2/0                             memory         4GiB SODIMM DDR3 Synchronous 1600 MHz (0.6 ns)
+/0/2/1                             memory         4GiB SODIMM DDR3 Synchronous 1600 MHz (0.6 ns)
+/0/e                               memory         128KiB BIOS
+/0/2b                              processor      Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz
+/0/2b/2d                           memory         32KiB L1 cache
+/0/2b/2e                           memory         256KiB L2 cache
+/0/2b/2f                           memory         3MiB L3 cache
+/0/2c                              memory         32KiB L1 cache
+/0/100                             bridge         Haswell-ULT DRAM Controller
+/0/100/2                           display        Haswell-ULT Integrated Graphics Controller
+/0/100/3                           multimedia     Haswell-ULT HD Audio Controller
+/0/100/14                          bus            8 Series USB xHCI HC
+/0/100/14/0            usb3        bus            xHCI Host Controller
+/0/100/14/1            usb2        bus            xHCI Host Controller
+/0/100/14/1/6          scsi4       communication  ZTE Mobile Broadband Station
+/0/100/14/1/6/0.0.0    /dev/sr1    disk           SCSI CD-ROM
+/0/100/14/1/6/0.0.0/1              volume         17KiB Apple partition map
+/0/100/14/1/6/0.0.0/2              volume         4844KiB Apple HFS
+/0/100/14/1/6/0.0.1    /dev/sdb    disk           SCSI Disk
+/0/100/16                          communication  8 Series HECI #0
+/0/100/1b                          multimedia     8 Series HD Audio Controller
+/0/100/1c                          bridge         8 Series PCI Express Root Port 1
+/0/100/1c.1                        bridge         8 Series PCI Express Root Port 2
+/0/100/1c.3                        bridge         8 Series PCI Express Root Port 4
+/0/100/1c.3/0          eth0        network        RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller
+/0/100/1d                          bus            8 Series USB EHCI #1
+/0/100/1d/1            usb1        bus            EHCI Host Controller
+/0/100/1d/1/1                      bus            USB hub
+/0/100/1d/1/1/2                    input          USB Optical Mouse
+/0/100/1d/1/1/3                    multimedia     HP Truevision HD
+/0/100/1f                          bridge         8 Series LPC Controller
+/0/100/1f.2                        storage        8 Series SATA Controller 1 [AHCI mode]
+/0/100/1f.3                        bus            8 Series SMBus Controller
+/0/0                   scsi0       storage        
+/0/0/0.0.0             /dev/sda    disk           1TB HGST HTS541010A9
+/0/0/0.0.0/1                       volume         511MiB Windows FAT volume
+/0/0/0.0.0/2           /dev/sda2   volume         923GiB EXT4 volume
+/0/0/0.0.0/3           /dev/sda3   volume         8121MiB Linux swap volume
+/0/1                   scsi1       storage        
+/0/1/0.0.0             /dev/cdrom  disk           DVDRW  DU8A5SHL
+/1                                 power          VI04041
+/2                                 power          OEM_Define5
+/3                     virbr0-nic  network        Ethernet interface
+/4                     enp0s20u6   network        Ethernet interface
+Linux george-HP-Pavilion-17-Notebook-PC 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+[    0.000000] x86/fpu: Using 'eager' FPU context switches.
+[    0.000000] DMI: Hewlett-Packard HP Pavilion 17 Notebook PC /227F, BIOS F.42 03/18/2015
+[    0.000000] Found optimal setting for mtrr clean up
+[    0.000000] No NUMA configuration found
+[    0.170449] PCCT header not found.
+[    0.170710] core: PMU erratum BJ122, BV98, HSD29 worked around, HT is on
+[    0.194814] [Firmware Bug]: ACPI: BIOS _OSI(Linux) query ignored
+[    0.376701] usbcore: registered new interface driver usbfs
+[    0.376712] usbcore: registered new interface driver hub
+[    0.376735] usbcore: registered new device driver usb
+[    0.385312] clocksource: Switched to clocksource hpet
+[    0.394088] pnp: PnP ACPI: found 5 devices
+[    1.232273] Console: switching to colour frame buffer device 200x56
+[    1.232885] input: Lid Switch as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0D:00/input/input0
+[    1.233213] ACPI: Lid Switch [LID0]
+[    1.234855] [Firmware Bug]: Invalid critical threshold (0)
+[    1.257375] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.257377] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.257379] usb usb1: Product: EHCI Host Controller
+[    1.257381] usb usb1: Manufacturer: Linux 4.4.0-59-generic ehci_hcd
+[    1.257382] usb usb1: SerialNumber: 0000:00:1d.0
+[    1.257616] hub 1-0:1.0: USB hub found
+[    1.259145] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.259147] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.259149] usb usb2: Product: xHCI Host Controller
+[    1.259151] usb usb2: Manufacturer: Linux 4.4.0-59-generic xhci-hcd
+[    1.259153] usb usb2: SerialNumber: 0000:00:14.0
+[    1.259379] hub 2-0:1.0: USB hub found
+[    1.260351] usb usb3: New USB device found, idVendor=1d6b, idProduct=0003
+[    1.260353] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.260355] usb usb3: Product: xHCI Host Controller
+[    1.260356] usb usb3: Manufacturer: Linux 4.4.0-59-generic xhci-hcd
+[    1.260358] usb usb3: SerialNumber: 0000:00:14.0
+[    1.260536] hub 3-0:1.0: USB hub found
+[    1.303424] ima: No TPM chip found, activating TPM-bypass!
+[    1.303996] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    1.398563] r8169 0000:08:00.0 eth0: RTL8106e at 0xffffc90000cd8000, 8c:dc:d4:7d:06:ae, XID 10900800 IRQ 42
+[    1.423437] fb: switching to inteldrmfb from EFI VGA
+[    1.423470] Console: switching to colour dummy device 80x25
+[    1.456522] Console: switching to colour frame buffer device 200x56
+[    1.573378] usb 1-1: new high-speed USB device number 2 using ehci-pci
+[    1.573380] usb 2-6: new high-speed USB device number 2 using xhci_hcd
+[    1.702649] usb 2-6: New USB device found, idVendor=19d2, idProduct=1405
+[    1.702654] usb 2-6: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    1.702656] usb 2-6: Product: ZTE Mobile Broadband Station
+[    1.702658] usb 2-6: Manufacturer: ZTE,Incorporated
+[    1.702660] usb 2-6: SerialNumber: 1234567890ABCDEF
+[    1.705763] usb 1-1: New USB device found, idVendor=8087, idProduct=8000
+[    1.705770] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    1.706069] hub 1-1:1.0: USB hub found
+[    1.709646] usb-storage 2-6:1.2: USB Mass Storage device detected
+[    1.709776] scsi host4: usb-storage 2-6:1.2
+[    1.709857] usbcore: registered new interface driver usb-storage
+[    1.711055] usbcore: registered new interface driver uas
+[    1.977358] usb 1-1.2: new low-speed USB device number 3 using ehci-pci
+[    2.073503] usb 1-1.2: New USB device found, idVendor=0461, idProduct=4e22
+[    2.073508] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    2.073510] usb 1-1.2: Product: USB Optical Mouse
+[    2.073512] usb 1-1.2: Manufacturer: PixArt
+[    2.080986] usbcore: registered new interface driver usbhid
+[    2.080988] usbhid: USB HID core driver
+[    2.082920] input: PixArt USB Optical Mouse as /devices/pci0000:00/0000:00:1d.0/usb1/1-1/1-1.2/1-1.2:1.0/0003:0461:4E22.0001/input/input7
+[    2.083022] hid-generic 0003:0461:4E22.0001: input,hidraw0: USB HID v1.11 Mouse [PixArt USB Optical Mouse] on usb-0000:00:1d.0-1.2/input0
+[    2.145360] usb 1-1.3: new high-speed USB device number 4 using ehci-pci
+[    2.317520] usb 1-1.3: New USB device found, idVendor=04f2, idProduct=b40e
+[    2.317524] usb 1-1.3: New USB device strings: Mfr=2, Product=1, SerialNumber=0
+[    2.317526] usb 1-1.3: Product: HP Truevision HD
+[    2.317528] usb 1-1.3: Manufacturer: Chicony Electronics Co., Ltd.
+[    2.410728] md: multipath personality registered for level -4
+[    3.225507] clocksource: Switched to clocksource tsc
+[   11.457328] lp: driver loaded but no devices found
+[   16.100399] EXT4-fs (sda2): re-mounted. Opts: errors=remount-ro
+[   17.978085] input: HP Wireless hotkeys as /devices/virtual/input/input8
+[   18.074323] lis3lv02d: 8 bits 3DC sensor found
+[   19.252782] cfg80211: World regulatory domain updated:
+[   19.252786] cfg80211:  DFS Master region: unset
+[   19.252788] cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)
+[   19.252791] cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+[   19.252792] cfg80211:   (2457000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+[   19.252794] cfg80211:   (2474000 KHz - 2494000 KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)
+[   19.252796] cfg80211:   (5170000 KHz - 5250000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (N/A)
+[   19.252799] cfg80211:   (5250000 KHz - 5330000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (0 s)
+[   19.252801] cfg80211:   (5490000 KHz - 5730000 KHz @ 160000 KHz), (N/A, 2000 mBm), (0 s)
+[   19.252802] cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+[   19.252804] cfg80211:   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)
+[   19.414137] snd_hda_intel 0000:00:03.0: bound 0000:00:02.0 (ops i915_audio_component_bind_ops [i915])
+[   19.479507] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card1/input10
+[   19.479565] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card1/input11
+[   19.595981] input: HDA Intel HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:03.0/sound/card0/input12
+[   19.596060] input: HDA Intel HDMI HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:03.0/sound/card0/input13
+[   19.596132] input: HDA Intel HDMI HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:03.0/sound/card0/input14
+[   19.848618] intel_rapl: Found RAPL domain package
+[   19.848622] intel_rapl: Found RAPL domain core
+[   19.848624] intel_rapl: Found RAPL domain uncore
+[   19.848626] intel_rapl: Found RAPL domain dram
+[   20.446049] cdc_ether 2-6:1.0 usb0: register 'cdc_ether' at usb-0000:00:14.0-6, CDC Ethernet Device, 02:0c:e7:0b:01:02
+[   20.446074] usbcore: registered new interface driver cdc_ether
+[   20.769405] uvcvideo: Found UVC 1.00 device HP Truevision HD (04f2:b40e)
+[   20.810382] input: HP Truevision HD as /devices/pci0000:00/0000:00:1d.0/usb1/1-1/1-1.3/1-1.3:1.0/input/input15
+[   20.810454] usbcore: registered new interface driver uvcvideo
+[   21.070864] cdc_ether 2-6:1.0 enp0s20u6: renamed from usb0
+[   31.340424] vboxdrv: Found 4 processor cores
+[   33.041012] vboxpci: IOMMU not found (not registered)
+[   55.896650] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   58.891461] r8169 0000:08:00.0 eth0: link down
+[   58.891526] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   58.895421] cdc_ether 2-6:1.0 enp0s20u6: kevent 12 may have been dropped
+[   61.609374] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=0000:0000:0000:0000:0000:0000:0000:0000 DST=ff02:0000:0000:0000:0000:0000:0000:0016 LEN=76 TC=0 HOPLIMIT=1 FLOWLBL=0 PROTO=ICMPv6 TYPE=143 CODE=0 MARK=0xd4 
+[   61.889403] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=0000:0000:0000:0000:0000:0000:0000:0000 DST=ff02:0000:0000:0000:0000:0000:0000:0016 LEN=76 TC=0 HOPLIMIT=1 FLOWLBL=0 PROTO=ICMPv6 TYPE=143 CODE=0 MARK=0xd4 
+[   63.002341] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[   63.002349] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[   63.002359] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[   63.146252] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.146261] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.146273] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.396897] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.396906] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.396918] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.537731] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.537739] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.537749] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.537755] [UFW BLOCK] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.537772] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.537775] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.537780] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.537784] [UFW BLOCK] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.547870] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.547878] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.547888] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.547895] [UFW BLOCK] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=925931 PROTO=UDP SPT=8612 DPT=8612 LEN=24 
+[   63.547912] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.547916] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.547922] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.547927] [UFW BLOCK] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:0001 LEN=64 TC=0 HOPLIMIT=1 FLOWLBL=748071 PROTO=UDP SPT=8612 DPT=8610 LEN=24 
+[   63.647504] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.647514] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.647527] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=225 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=185 
+[   63.848053] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=213 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=173 
+[   63.848072] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=213 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=173 
+[   64.002475] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[   64.002493] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[   89.034323] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=87 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=47 
+[  102.747625] [UFW ALLOW] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  108.098519] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  108.098537] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  124.128796] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  124.128804] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  124.128815] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  154.160604] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  154.160613] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  154.160626] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  161.183514] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=53635 PROTO=TCP SPT=443 DPT=59684 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.183523] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=53635 PROTO=TCP SPT=443 DPT=59684 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.205276] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=53647 PROTO=TCP SPT=443 DPT=59684 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.205291] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=53647 PROTO=TCP SPT=443 DPT=59684 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.613514] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=58290 PROTO=TCP SPT=443 DPT=39754 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.613532] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=58290 PROTO=TCP SPT=443 DPT=39754 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.623379] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=58294 PROTO=TCP SPT=443 DPT=39754 WINDOW=0 RES=0x00 RST URGP=0 
+[  161.623395] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=58294 PROTO=TCP SPT=443 DPT=39754 WINDOW=0 RES=0x00 RST URGP=0 
+[  162.515497] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=54401 PROTO=TCP SPT=443 DPT=59690 WINDOW=0 RES=0x00 RST URGP=0 
+[  162.515516] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=54401 PROTO=TCP SPT=443 DPT=59690 WINDOW=0 RES=0x00 RST URGP=0 
+[  162.523383] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=54415 PROTO=TCP SPT=443 DPT=59690 WINDOW=0 RES=0x00 RST URGP=0 
+[  162.523407] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.42 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=54415 PROTO=TCP SPT=443 DPT=59690 WINDOW=0 RES=0x00 RST URGP=0 
+[  163.217430] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59149 PROTO=TCP SPT=443 DPT=39760 WINDOW=0 RES=0x00 RST URGP=0 
+[  163.217445] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59149 PROTO=TCP SPT=443 DPT=39760 WINDOW=0 RES=0x00 RST URGP=0 
+[  163.235270] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59159 PROTO=TCP SPT=443 DPT=39760 WINDOW=0 RES=0x00 RST URGP=0 
+[  163.235288] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59159 PROTO=TCP SPT=443 DPT=39760 WINDOW=0 RES=0x00 RST URGP=0 
+[  164.107425] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59446 PROTO=TCP SPT=443 DPT=39766 WINDOW=0 RES=0x00 RST URGP=0 
+[  164.107441] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59446 PROTO=TCP SPT=443 DPT=39766 WINDOW=0 RES=0x00 RST URGP=0 
+[  164.177284] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59491 PROTO=TCP SPT=443 DPT=39766 WINDOW=0 RES=0x00 RST URGP=0 
+[  164.177293] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=59491 PROTO=TCP SPT=443 DPT=39766 WINDOW=0 RES=0x00 RST URGP=0 
+[  186.403503] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=6769 PROTO=TCP SPT=443 DPT=39794 WINDOW=0 RES=0x00 RST URGP=0 
+[  186.403512] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=74.125.238.43 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=6769 PROTO=TCP SPT=443 DPT=39794 WINDOW=0 RES=0x00 RST URGP=0 
+[  190.225899] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  190.225909] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  190.225925] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  217.423611] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=162.213.33.130 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=46 ID=58384 DF PROTO=TCP SPT=443 DPT=32974 WINDOW=0 RES=0x00 RST URGP=0 
+[  217.423632] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=162.213.33.130 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=46 ID=58384 DF PROTO=TCP SPT=443 DPT=32974 WINDOW=0 RES=0x00 RST URGP=0 
+[  220.112761] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  220.112771] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  220.112785] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  224.760942] [UFW AUDIT] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  224.760949] [UFW ALLOW] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  224.760961] [UFW AUDIT] IN=vmnet8 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  226.168930] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=88 TC=0 HOPLIMIT=1 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=48 
+[  226.168941] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=88 TC=0 HOPLIMIT=1 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=48 
+[  226.168956] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=88 TC=0 HOPLIMIT=1 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=48 
+[  246.484584] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=88 TC=0 HOPLIMIT=1 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=48 
+[  246.484595] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=88 TC=0 HOPLIMIT=1 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=48 
+[  246.484606] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=88 TC=0 HOPLIMIT=1 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=48 
+[  271.813572] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=151.101.16.134 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=443 DPT=49094 WINDOW=0 RES=0x20 RST URGP=0 
+[  271.813578] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=151.101.16.134 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=443 DPT=49094 WINDOW=0 RES=0x20 RST URGP=0 
+[  271.824995] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=104.16.85.20 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=443 DPT=43322 WINDOW=0 RES=0x20 RST URGP=0 
+[  271.825005] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=104.16.85.20 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=443 DPT=43322 WINDOW=0 RES=0x20 RST URGP=0 
+[  272.069441] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=104.16.85.20 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=443 DPT=43322 WINDOW=0 RES=0x20 RST URGP=0 
+[  272.069450] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=104.16.85.20 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=443 DPT=43322 WINDOW=0 RES=0x20 RST URGP=0 
+[  318.281621] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  318.281631] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  318.281650] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  329.950820] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=108.161.188.192 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=49 ID=3939 DF PROTO=TCP SPT=443 DPT=34762 WINDOW=0 RES=0x00 RST URGP=0 
+[  329.950845] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=108.161.188.192 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=49 ID=3939 DF PROTO=TCP SPT=443 DPT=34762 WINDOW=0 RES=0x00 RST URGP=0 
+[  348.110006] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  348.110017] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  348.110032] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  352.759512] [UFW AUDIT] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  352.759535] [UFW ALLOW] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  352.759564] [UFW AUDIT] IN=vmnet8 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  574.304211] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  574.304221] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  574.304240] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  604.118071] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  604.118081] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  604.118095] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  608.766630] [UFW AUDIT] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  608.766642] [UFW ALLOW] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  608.766658] [UFW AUDIT] IN=vmnet8 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[  723.414444] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.15 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=15660 PROTO=TCP SPT=80 DPT=58978 WINDOW=0 RES=0x00 RST URGP=0 
+[  723.414467] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.15 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=15660 PROTO=TCP SPT=80 DPT=58978 WINDOW=0 RES=0x00 RST URGP=0 
+[ 1086.394369] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1086.394390] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1086.394421] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1116.114921] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1116.114932] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1116.114947] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1120.763249] [UFW AUDIT] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1120.763267] [UFW ALLOW] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 1120.763289] [UFW AUDIT] IN=vmnet8 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2110.458649] [UFW AUDIT] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2110.458661] [UFW ALLOW] IN= OUT=enp0s20u6 SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2110.458680] [UFW AUDIT] IN=enp0s20u6 OUT= MAC= SRC=fe80:0000:0000:0000:0211:7b0f:e264:2284 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=128119 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2140.118220] [UFW AUDIT] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2140.118242] [UFW ALLOW] IN= OUT=vmnet1 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2140.118272] [UFW AUDIT] IN=vmnet1 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0001 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=738620 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2144.769230] [UFW AUDIT] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2144.769241] [UFW ALLOW] IN= OUT=vmnet8 SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2144.769257] [UFW AUDIT] IN=vmnet8 OUT= MAC= SRC=fe80:0000:0000:0000:0250:56ff:fec0:0008 DST=ff02:0000:0000:0000:0000:0000:0000:00fb LEN=93 TC=0 HOPLIMIT=255 FLOWLBL=197595 PROTO=UDP SPT=5353 DPT=5353 LEN=53 
+[ 2648.051210] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.161 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=10873 PROTO=TCP SPT=80 DPT=45980 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.051223] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.161 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=10873 PROTO=TCP SPT=80 DPT=45980 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.153057] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=16101 PROTO=TCP SPT=80 DPT=49738 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.153066] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=16101 PROTO=TCP SPT=80 DPT=49738 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.551036] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=34381 PROTO=TCP SPT=80 DPT=49748 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.551043] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=34381 PROTO=TCP SPT=80 DPT=49748 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.551129] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=54.230.97.187 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=35177 PROTO=TCP SPT=80 DPT=34340 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.551136] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=54.230.97.187 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=35177 PROTO=TCP SPT=80 DPT=34340 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.983086] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=55341 PROTO=TCP SPT=80 DPT=49768 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2648.983094] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=55341 PROTO=TCP SPT=80 DPT=49768 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2649.250885] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=3189 PROTO=TCP SPT=80 DPT=49774 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2649.250904] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=3189 PROTO=TCP SPT=80 DPT=49774 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2649.570885] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=17739 PROTO=TCP SPT=80 DPT=49778 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2649.570893] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=17739 PROTO=TCP SPT=80 DPT=49778 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2649.920736] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=34661 PROTO=TCP SPT=80 DPT=49784 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2649.920742] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=34661 PROTO=TCP SPT=80 DPT=49784 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2650.716184] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=4204 PROTO=TCP SPT=80 DPT=49792 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2650.716193] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=4204 PROTO=TCP SPT=80 DPT=49792 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2651.090973] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=23436 PROTO=TCP SPT=80 DPT=49796 WINDOW=0 RES=0x00 RST URGP=0 
+[ 2651.090984] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=23436 PROTO=TCP SPT=80 DPT=49796 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3109.414916] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.149 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=27083 PROTO=TCP SPT=80 DPT=49068 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3109.414948] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.149 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=27083 PROTO=TCP SPT=80 DPT=49068 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3131.473292] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.162 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=2553 PROTO=TCP SPT=80 DPT=60056 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3131.473300] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.162 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=2553 PROTO=TCP SPT=80 DPT=60056 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3170.446327] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446349] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446369] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446383] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446390] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446395] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446403] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446415] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446422] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446427] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446434] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446439] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446447] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446458] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446468] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446473] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446480] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446485] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446502] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3170.446507] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.152 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=47464 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3181.885530] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=52 TOS=0x00 PREC=0x00 TTL=126 ID=62494 DF PROTO=TCP SPT=80 DPT=49966 WINDOW=3683 RES=0x00 ACK URGP=0 
+[ 3185.257123] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=52 TOS=0x00 PREC=0x00 TTL=126 ID=62495 DF PROTO=TCP SPT=80 DPT=49966 WINDOW=3683 RES=0x00 ACK URGP=0 
+[ 3190.816240] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=52 TOS=0x00 PREC=0x00 TTL=126 ID=62496 DF PROTO=TCP SPT=80 DPT=49966 WINDOW=3683 RES=0x00 ACK URGP=0 
+[ 3202.101955] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=52 TOS=0x00 PREC=0x00 TTL=123 ID=7545 PROTO=TCP SPT=80 DPT=49966 WINDOW=54 RES=0x00 ACK URGP=0 
+[ 3224.651950] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=49966 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3224.651988] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=124 ID=0 PROTO=TCP SPT=80 DPT=49966 WINDOW=0 RES=0x20 RST URGP=0 
+[ 3330.012210] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=24844 PROTO=TCP SPT=80 DPT=50082 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.012226] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=24844 PROTO=TCP SPT=80 DPT=50082 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.151326] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.149 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=30651 PROTO=TCP SPT=80 DPT=49178 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.151332] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.149 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=30651 PROTO=TCP SPT=80 DPT=49178 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.334069] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=38484 PROTO=TCP SPT=80 DPT=50104 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.334076] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=38484 PROTO=TCP SPT=80 DPT=50104 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.454406] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.161 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=47372 PROTO=TCP SPT=80 DPT=46350 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.454415] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.88.161 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=47372 PROTO=TCP SPT=80 DPT=46350 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.666292] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=60088 PROTO=TCP SPT=80 DPT=50110 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.666300] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=60088 PROTO=TCP SPT=80 DPT=50110 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.972000] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=13832 PROTO=TCP SPT=80 DPT=50118 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3330.972012] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=13832 PROTO=TCP SPT=80 DPT=50118 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3331.281961] [UFW AUDIT INVALID] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=31634 PROTO=TCP SPT=80 DPT=50122 WINDOW=0 RES=0x00 RST URGP=0 
+[ 3331.281968] [UFW BLOCK] IN=enp0s20u6 OUT= MAC=02:0c:e7:0b:01:02:00:0c:e7:0b:01:02:08:00 SRC=91.189.95.83 DST=192.168.0.137 LEN=40 TOS=0x00 PREC=0x00 TTL=250 ID=31634 PROTO=TCP SPT=80 DPT=50122 WINDOW=0 RES=0x00 RST URGP=0 
+	Manufacturer: Kingston
+	Serial Number: EF185ED3
+	Manufacturer: Kingston
+	Serial Number: E918C1D3
+	Release Date: 03/18/2015
+	Manufacturer: Hewlett-Packard
+	Product Name: HP Pavilion 17 Notebook PC 
+	Serial Number: 6CC4364C85
+	Manufacturer: Hewlett-Packard
+	Product Name: 227F
+	Serial Number: PEMKD018J7F1T5
+	Manufacturer: Hewlett-Packard
+	Serial Number: Chassis Serial Number
+	String 6: String7 for Original Equipment Manufacturer
+	String 7: String8 for Original Equipment Manufacturer
+	String 8: String9 for Original Equipment Manufacturer
+	String 9: String10 for Original Equipment Manufacturer
+	String 10: String11 for Original Equipment Manufacturer
+	Option 1: String1 for Type12 Equipment Manufacturer
+	Option 2: String2 for Type12 Equipment Manufacturer
+	Option 3: String3 for Type12 Equipment Manufacturer
+	Option 4: String4 for Type12 Equipment Manufacturer
+	Option 5: String5 for Type12 Equipment Manufacturer
+	Option 6: String6 for Type12 Equipment Manufacturer
+	Option 7: String7 for Type12 Equipment Manufacturer
+	Option 8: String8 for Type12 Equipment Manufacturer
+	Manufacturer: 13-54
+	Manufacture Date: 01/01/2014
+	Serial Number: DummySerialNumber
+	Manufacturer: OEM_Define2
+	Serial Number: OEM_Define3
+	Manufacturer: Intel(R) Corporation
+	Serial Number: To Be Filled By O.E.M.
+lo        no wireless extensions.
+
+vmnet1    no wireless extensions.
+
+virbr0    no wireless extensions.
+
+virbr0-nic  no wireless extensions.
+
+vmnet8    no wireless extensions.
+
+docker0   no wireless extensions.
+
+enp0s20u6  no wireless extensions.
+
+eth0      no wireless extensions.
+
+/etc/modprobe.d/alsa-base.conf:install snd-rawmidi /sbin/modprobe --ignore-install snd-rawmidi $CMDLINE_OPTS && { /sbin/modprobe --quiet --use-blacklist snd-seq-midi ; : ; }
+/etc/modprobe.d/blacklist-ath_pci.conf:# which ath5k cannot recover. To prevent this condition, stop
+/etc/modprobe.d/blacklist-ath_pci.conf:blacklist ath_pci
+/etc/modprobe.d/blacklist.conf:blacklist eth1394
+/etc/modprobe.d/blacklist.conf:# replaced by p54pci
+/etc/modprobe.d/blacklist.conf:blacklist prism54
+/etc/modprobe.d/blacklist.conf:# replaced by b43 and ssb.
+/etc/modprobe.d/blacklist.conf:blacklist bcm43xx
+/etc/modprobe.d/blacklist-oss.conf:blacklist uart6850
+/etc/modprobe.d/blacklist-watchdog.conf:blacklist twl4030_wdt
+/etc/modprobe.d/iwlwifi.conf:# /etc/modprobe.d/iwlwifi.conf
+/etc/modprobe.d/iwlwifi.conf:# iwlwifi will dyamically load either iwldvm or iwlmvm depending on the
+/etc/modprobe.d/iwlwifi.conf:# microcode file installed on the system.  When removing iwlwifi, first
+/etc/modprobe.d/iwlwifi.conf:# remove the iwl?vm module and then iwlwifi.
+/etc/modprobe.d/iwlwifi.conf:remove iwlwifi \
+/etc/modprobe.d/iwlwifi.conf:(/sbin/lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs /sbin/rmmod) \
+/etc/modprobe.d/iwlwifi.conf:&& /sbin/modprobe -r mac80211
+[main]
+NetworkingEnabled=true
+WirelessEnabled=true
+WWANEnabled=true
+WimaxEnabled=true
+20: PCI 800.0: 0200 Ethernet controller                         
+  [Created at pci.366]
+  Unique ID: rBUF.62x2J9667B3
+  Parent ID: Z7uZ.d64sJkzZBkA
+  SysFS ID: /devices/pci0000:00/0000:00:1c.3/0000:08:00.0
+  SysFS BusID: 0000:08:00.0
+  Hardware Class: network
+  Device Name: "Realtek PCIe FE Family Controller"
+  Model: "Realtek RTL8101E/RTL8102E PCI Express Fast Ethernet controller"
+  Vendor: pci 0x10ec "Realtek Semiconductor Co., Ltd."
+  Device: pci 0x8136 "RTL8101E/RTL8102E PCI Express Fast Ethernet controller"
+  SubVendor: pci 0x103c "Hewlett-Packard Company"
+  SubDevice: pci 0x227f 
+  Revision: 0x08
+  Driver: "r8169"
+  Driver Modules: "r8169"
+  Device File: eth0
+  I/O Ports: 0x3000-0x3fff (rw)
+  Memory Range: 0xb2404000-0xb2404fff (rw,non-prefetchable)
+  Memory Range: 0xb2400000-0xb2403fff (rw,non-prefetchable)
+  IRQ: 42 (no events)
+  HW Address: 8c:dc:d4:7d:06:ae
+  Link detected: no
+  Module Alias: "pci:v000010ECd00008136sv0000103Csd0000227Fbc02sc00i00"
+  Driver Info #0:
+    Driver Status: r8169 is active
+    Driver Activation Cmd: "modprobe r8169"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #15 (PCI bridge)
+
+28: USB 00.0: 0291 USB Host-to-Host link
+  [Created at usb.122]
+  Unique ID: R_O4.lKXDsqIUjW8
+  Parent ID: pBe4.2DFUsyrieMD
+  SysFS ID: /devices/pci0000:00/0000:00:14.0/usb2/2-6/2-6:1.0
+  SysFS BusID: 2-6:1.0
+  Hardware Class: network
+  Model: "ZTE WCDMA Technologies MSM ZTE Mobile Broadband Station"
+  Hotplug: USB
+  Vendor: usb 0x19d2 "ZTE WCDMA Technologies MSM"
+  Device: usb 0x1405 "ZTE Mobile Broadband Station"
+  Revision: "52.12"
+  Serial ID: "1234567890ABCDEF"
+  Driver: "cdc_ether"
+  Driver Modules: "cdc_ether"
+  Device File: enp0s20u6
+  Speed: 480 Mbps
+  HW Address: 02:0c:e7:0b:01:02
+  Link detected: yes
+  Module Alias: "usb:v19D2p1405d5212dc02dsc00dp00ic02isc06ip00in00"
+  Driver Info #0:
+    Driver Status: cdc_ether is active
+    Driver Activation Cmd: "modprobe cdc_ether"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #27 (Hub)
+root      1306  0.0  0.1 449516 14888 ?        Ssl  Jan23   0:00 /usr/sbin/NetworkManager --no-daemon
+root      1747  0.0  0.0  16124  3552 ?        S    Jan23   0:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-enp0s20u6.pid -lf /var/lib/NetworkManager/dhclient-19fe4a31-b99f-30d2-9faf-f77beeb1f66c-enp0s20u6.lease -cf /var/lib/NetworkManager/dhclient-enp0s20u6.conf enp0s20u6
+nobody    1769  0.0  0.0  52876  3604 ?        S    Jan23   0:00 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.1.1 --cache-size=0 --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+george   25883  0.0  0.0  14236   928 pts/19   S+   00:44   0:00 grep --color=auto -E wpa|icd|etwork
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.0.1     0.0.0.0         UG        0 0          0 enp0s20u6
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 enp0s20u6
+172.16.12.0     0.0.0.0         255.255.255.0   U         0 0          0 vmnet1
+172.17.0.0      0.0.0.0         255.255.0.0     U         0 0          0 docker0
+192.168.0.0     0.0.0.0         255.255.255.0   U         0 0          0 enp0s20u6
+192.168.68.0    0.0.0.0         255.255.255.0   U         0 0          0 vmnet8
+192.168.122.0   0.0.0.0         255.255.255.0   U         0 0          0 virbr0
+# Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
+#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
+nameserver 127.0.1.1
+total 410440
+7602177 drwxr-xr-x  4 root root     4096 Jan 24 00:42 .
+      2 drwxr-xr-x 26 root root     4096 Jan 11 11:46 ..
+7602190 -rw-r--r--  1 root root  1272504 Mar 18  2016 abi-3.19.0-58-generic
+7602182 -rw-r--r--  1 root root  1272771 May 13  2016 abi-3.19.0-59-generic
+7602467 -rw-r--r--  1 root root  1272771 Jun  9  2016 abi-3.19.0-61-generic
+7602473 -rw-r--r--  1 root root  1273000 Jun 24  2016 abi-3.19.0-64-generic
+7602478 -rw-r--r--  1 root root  1273048 Jun 30  2016 abi-3.19.0-65-generic
+7602485 -rw-r--r--  1 root root  1273095 Jul 20  2016 abi-3.19.0-66-generic
+7602459 -rw-r--r--  1 root root  1243800 Dec 10 05:04 abi-4.4.0-57-generic
+7612272 -rw-r--r--  1 root root  1244118 Jan  7 01:44 abi-4.4.0-59-generic
+7602191 -rw-r--r--  1 root root   177808 Mar 18  2016 config-3.19.0-58-generic
+7602187 -rw-r--r--  1 root root   177808 May 13  2016 config-3.19.0-59-generic
+7602468 -rw-r--r--  1 root root   177819 Jun  9  2016 config-3.19.0-61-generic
+7602472 -rw-r--r--  1 root root   177819 Jun 24  2016 config-3.19.0-64-generic
+7602477 -rw-r--r--  1 root root   177856 Jun 30  2016 config-3.19.0-65-generic
+7602475 -rw-r--r--  1 root root   177856 Jul 20  2016 config-3.19.0-66-generic
+7602498 -rw-r--r--  1 root root   189991 Dec 10 05:04 config-4.4.0-57-generic
+7612205 -rw-r--r--  1 root root   190047 Jan  7 01:44 config-4.4.0-59-generic
+      1 drwxr-xr-x  3 root root     4096 Jan  1  1970 efi
+7602179 drwxr-xr-x  5 root root     4096 Jan 17 12:11 grub
+7602181 -rw-r--r--  1 root root 33451478 Dec 14 19:45 initrd.img-3.19.0-58-generic
+7602471 -rw-r--r--  1 root root 33451490 Dec 14 19:45 initrd.img-3.19.0-59-generic
+7602476 -rw-r--r--  1 root root 33445896 Dec 14 19:45 initrd.img-3.19.0-61-generic
+7602483 -rw-r--r--  1 root root 33443213 Dec 14 19:44 initrd.img-3.19.0-64-generic
+7602481 -rw-r--r--  1 root root 33447635 Dec 14 19:44 initrd.img-3.19.0-65-generic
+7602492 -rw-r--r--  1 root root 33448313 Dec 14 19:44 initrd.img-3.19.0-66-generic
+7602521 -rw-r--r--  1 root root 38512345 Dec 21 10:18 initrd.img-4.4.0-57-generic
+7602458 -rw-r--r--  1 root root 38510413 Jan 24 00:42 initrd.img-4.4.0-59-generic
+7602490 -rw-r--r--  1 root root   182704 Jan 28  2016 memtest86+.bin
+7602491 -rw-r--r--  1 root root   184380 Jan 28  2016 memtest86+.elf
+7602487 -rw-r--r--  1 root root   184840 Jan 28  2016 memtest86+_multiboot.bin
+7602192 -rw-------  1 root root  3631691 Mar 18  2016 System.map-3.19.0-58-generic
+7602180 -rw-------  1 root root  3632064 May 13  2016 System.map-3.19.0-59-generic
+7602466 -rw-------  1 root root  3632393 Jun  9  2016 System.map-3.19.0-61-generic
+7602474 -rw-------  1 root root  3632540 Jun 24  2016 System.map-3.19.0-64-generic
+7602479 -rw-------  1 root root  3632922 Jun 30  2016 System.map-3.19.0-65-generic
+7602484 -rw-------  1 root root  3633084 Jul 20  2016 System.map-3.19.0-66-generic
+7602502 -rw-------  1 root root  3875329 Dec 10 05:04 System.map-4.4.0-57-generic
+7602520 -rw-------  1 root root  3875594 Jan  7 01:44 System.map-4.4.0-59-generic
+7602189 -rw-------  1 root root  6591152 Mar 18  2016 vmlinuz-3.19.0-58-generic
+7602193 -rw-------  1 root root  6592048 May 13  2016 vmlinuz-3.19.0-59-generic
+7602194 -rw-------  1 root root  6593976 May 17  2016 vmlinuz-3.19.0-59-generic.efi.signed
+7602195 -rw-------  1 root root  6591760 Jun  9  2016 vmlinuz-3.19.0-61-generic
+7602470 -rw-------  1 root root  6593688 Jun 12  2016 vmlinuz-3.19.0-61-generic.efi.signed
+7602462 -rw-------  1 root root  6592240 Jun 24  2016 vmlinuz-3.19.0-64-generic
+7602469 -rw-------  1 root root  6594168 Jun 29  2016 vmlinuz-3.19.0-64-generic.efi.signed
+7602480 -rw-------  1 root root  6593392 Jun 30  2016 vmlinuz-3.19.0-65-generic
+7602482 -rw-------  1 root root  6595320 Jul 15  2016 vmlinuz-3.19.0-65-generic.efi.signed
+7602486 -rw-------  1 root root  6594032 Jul 20  2016 vmlinuz-3.19.0-66-generic
+7602488 -rw-------  1 root root  6595960 Aug  9 08:55 vmlinuz-3.19.0-66-generic.efi.signed
+7602457 -rw-------  1 root root  7067152 Dec 10 05:04 vmlinuz-4.4.0-57-generic
+7602188 -rw-------  1 root root  7069080 Dec 21 10:18 vmlinuz-4.4.0-57-generic.efi.signed
+7612273 -rw-------  1 root root  7069136 Jan  7 01:44 vmlinuz-4.4.0-59-generic
+7612275 -rw-------  1 root root  7071064 Jan 11 11:47 vmlinuz-4.4.0-59-generic.efi.signed
+Support status summary of 'george-HP-Pavilion-17-Notebook-PC':
+
+You have 163 packages (4.9%) supported until April 2019 (3y)
+You have 28 packages (0.8%) supported until January 2022 (5y)
+You have 189 packages (5.7%) supported until January 2017 (9m)
+You have 2225 packages (67.4%) supported until April 2021 (5y)
+
+You have 93 packages (2.8%) that can not/no-longer be downloaded
+You have 603 packages (18.3%) that are unsupported
+
+Run with --show-unsupported, --show-supported or --show-all to see more details
+Downloaded daily snapshot dated 2017-01-08 03:15:02
+--2017-01-24 00:44:31--  http://www.linux-usb.org/usb.ids
+Resolving www.linux-usb.org (www.linux-usb.org)... 216.34.181.97
+Connecting to www.linux-usb.org (www.linux-usb.org)|216.34.181.97|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 577007 (563K) [text/plain]
+Saving to: ‘/var/lib/usbutils/usb.ids.new’
+
+/var/lib/usbutils/usb.ids.new   100%[=====================================================>] 563.48K   360KB/s    in 1.6s    
+
+2017-01-24 00:44:34 (360 KB/s) - ‘/var/lib/usbutils/usb.ids.new’ saved [577007/577007]
+
+Done.
+Module                  Size  Used by
+cpuid                  16384  0
+nls_utf8               16384  1
+isofs                  40960  1
+xfrm_user              32768  1
+xfrm_algo              16384  1 xfrm_user
+br_netfilter           24576  0
+vmnet                  53248  13
+xt_CHECKSUM            16384  1
+iptable_mangle         16384  1
+ipt_MASQUERADE         16384  4
+nf_nat_masquerade_ipv4    16384  1 ipt_MASQUERADE
+iptable_nat            16384  1
+nf_nat_ipv4            16384  1 iptable_nat
+aufs                  217088  0
+bridge                126976  1 br_netfilter
+stp                    16384  1 bridge
+llc                    16384  2 stp,bridge
+vmw_vsock_vmci_transport    28672  0
+vsock                  36864  1 vmw_vsock_vmci_transport
+vmw_vmci               65536  1 vmw_vsock_vmci_transport
+ebtable_filter         16384  0
+ebtables               36864  1 ebtable_filter
+vmmon                  86016  0
+pci_stub               16384  1
+vboxpci                24576  0
+vboxnetadp             28672  0
+vboxnetflt             28672  0
+vboxdrv               454656  3 vboxnetadp,vboxnetflt,vboxpci
+binfmt_misc            20480  1
+nls_iso8859_1          16384  1
+hp_wmi                 16384  0
+sparse_keymap          16384  1 hp_wmi
+uvcvideo               90112  0
+videobuf2_vmalloc      16384  1 uvcvideo
+videobuf2_memops       16384  1 videobuf2_vmalloc
+videobuf2_v4l2         28672  1 uvcvideo
+videobuf2_core         36864  2 uvcvideo,videobuf2_v4l2
+v4l2_common            16384  1 videobuf2_v4l2
+videodev              176128  4 uvcvideo,v4l2_common,videobuf2_core,videobuf2_v4l2
+media                  24576  2 uvcvideo,videodev
+cdc_ether              16384  0
+usbnet                 45056  1 cdc_ether
+intel_rapl             20480  0
+x86_pkg_temp_thermal    16384  0
+intel_powerclamp       16384  0
+coretemp               16384  0
+snd_hda_codec_hdmi     53248  1
+kvm_intel             172032  0
+kvm                   540672  1 kvm_intel
+snd_hda_codec_realtek    86016  1
+snd_hda_codec_generic    77824  1 snd_hda_codec_realtek
+snd_hda_intel          40960  5
+irqbypass              16384  1 kvm
+snd_hda_codec         135168  4 snd_hda_codec_realtek,snd_hda_codec_hdmi,snd_hda_codec_generic,snd_hda_intel
+snd_hda_core           73728  5 snd_hda_codec_realtek,snd_hda_codec_hdmi,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel
+crct10dif_pclmul       16384  0
+snd_hwdep              16384  1 snd_hda_codec
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+snd_pcm               106496  4 snd_hda_codec_hdmi,snd_hda_codec,snd_hda_intel,snd_hda_core
+snd_seq_midi           16384  0
+snd_seq_midi_event     16384  1 snd_seq_midi
+snd_rawmidi            32768  1 snd_seq_midi
+snd_seq                69632  2 snd_seq_midi_event,snd_seq_midi
+aesni_intel           167936  0
+aes_x86_64             20480  1 aesni_intel
+snd_seq_device         16384  3 snd_seq,snd_rawmidi,snd_seq_midi
+lrw                    16384  1 aesni_intel
+snd_timer              32768  2 snd_pcm,snd_seq
+gf128mul               16384  1 lrw
+glue_helper            16384  1 aesni_intel
+snd                    81920  21 snd_hda_codec_realtek,snd_hwdep,snd_timer,snd_hda_codec_hdmi,snd_pcm,snd_seq,snd_rawmidi,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel,snd_seq_device
+ablk_helper            16384  1 aesni_intel
+soundcore              16384  1 snd
+cryptd                 20480  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+input_leds             16384  0
+joydev                 20480  0
+shpchp                 36864  0
+serio_raw              16384  0
+hp_accel               28672  0
+lis3lv02d              20480  1 hp_accel
+mei_me                 36864  0
+lpc_ich                24576  0
+input_polldev          16384  1 lis3lv02d
+mei                    98304  1 mei_me
+hp_wireless            16384  0
+intel_smartconnect     16384  0
+mac_hid                16384  0
+ip6t_REJECT            16384  1
+nf_reject_ipv6         16384  1 ip6t_REJECT
+nf_log_ipv6            16384  10
+xt_hl                  16384  22
+ip6t_rt                16384  3
+nf_conntrack_ipv6      20480  11
+nf_defrag_ipv6         36864  1 nf_conntrack_ipv6
+ipt_REJECT             16384  3
+nf_reject_ipv4         16384  1 ipt_REJECT
+xt_comment             16384  2
+nf_log_ipv4            16384  10
+nf_log_common          16384  2 nf_log_ipv4,nf_log_ipv6
+xt_LOG                 16384  20
+xt_limit               16384  21
+xt_tcpudp              16384  30
+xt_addrtype            16384  6
+nf_conntrack_ipv4      16384  14
+nf_defrag_ipv4         16384  1 nf_conntrack_ipv4
+rtl8188ee              86016  0
+xt_conntrack           16384  24
+rtl_pci                28672  1 rtl8188ee
+rtlwifi                77824  2 rtl_pci,rtl8188ee
+mac80211              737280  3 rtl_pci,rtlwifi,rtl8188ee
+cfg80211              565248  2 mac80211,rtlwifi
+ip6table_filter        16384  1
+ip6_tables             28672  1 ip6table_filter
+parport_pc             32768  0
+ppdev                  20480  0
+nf_conntrack_netbios_ns    16384  0
+nf_conntrack_broadcast    16384  1 nf_conntrack_netbios_ns
+nf_nat_ftp             16384  0
+nf_nat                 24576  3 nf_nat_ftp,nf_nat_ipv4,nf_nat_masquerade_ipv4
+nf_conntrack_ftp       20480  1 nf_nat_ftp
+nf_conntrack          106496  10 nf_nat_ftp,nf_conntrack_netbios_ns,nf_nat,nf_nat_ipv4,xt_conntrack,nf_nat_masquerade_ipv4,nf_conntrack_broadcast,nf_conntrack_ftp,nf_conntrack_ipv4,nf_conntrack_ipv6
+iptable_filter         16384  1
+ip_tables              24576  3 iptable_filter,iptable_mangle,iptable_nat
+lp                     20480  0
+x_tables               36864  18 ip6table_filter,xt_hl,xt_comment,xt_CHECKSUM,ip_tables,xt_tcpudp,ipt_MASQUERADE,xt_limit,xt_conntrack,xt_LOG,iptable_filter,ebtables,ip6t_rt,ipt_REJECT,iptable_mangle,ip6_tables,xt_addrtype,ip6t_REJECT
+parport                49152  3 lp,ppdev,parport_pc
+autofs4                40960  2
+raid10                 49152  0
+raid456               110592  0
+async_raid6_recov      20480  1 raid456
+async_memcpy           16384  2 raid456,async_raid6_recov
+async_pq               16384  2 raid456,async_raid6_recov
+async_xor              16384  3 async_pq,raid456,async_raid6_recov
+async_tx               16384  5 async_pq,raid456,async_xor,async_memcpy,async_raid6_recov
+xor                    24576  1 async_xor
+raid6_pq              102400  3 async_pq,raid456,async_raid6_recov
+libcrc32c              16384  1 raid456
+raid1                  36864  0
+raid0                  20480  0
+multipath              16384  0
+linear                 16384  0
+hid_generic            16384  0
+usbhid                 49152  0
+hid                   118784  2 hid_generic,usbhid
+uas                    24576  0
+usb_storage            69632  2 uas
+i915                 1208320  4
+i2c_algo_bit           16384  1 i915
+drm_kms_helper        155648  1 i915
+syscopyarea            16384  1 drm_kms_helper
+psmouse               131072  0
+sysfillrect            16384  1 drm_kms_helper
+sysimgblt              16384  1 drm_kms_helper
+fb_sys_fops            16384  1 drm_kms_helper
+drm                   364544  5 i915,drm_kms_helper
+r8169                  81920  0
+ahci                   36864  3
+libahci                32768  1 ahci
+mii                    16384  2 r8169,usbnet
+wmi                    20480  1 hp_wmi
+video                  40960  1 i915
+fjes                   28672  0
+

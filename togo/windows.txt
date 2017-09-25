@@ -1,0 +1,3 @@
+Runas_Alias ADMINS = %sudo, %admin, root
+
+ADMINS   ALL = /bin/mount -t ntfs /the/mount/file  /the/mount/point

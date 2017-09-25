@@ -1,0 +1,18 @@
+ 5 ONFIG_MODULES=y
+ 6 ONFIG_HAVE_DOT_CONFIG=y
+ 7 ONFIG_TARGET_sunxi=y
+ 8  #ONFIG_TARGET_sunxi_BPI-M1-Plus is not set
+ 9 ONFIG_TARGET_sunxi_BPI-M1=y
+10  #ONFIG_TARGET_sunxi_BPI-R1 is not set
+11 ONFIG_TARGET_BOARD="sunxi"
+12 ONFIG_TARGET_ARCH_PACKAGES="sunxi"
+13 ONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -march=armv7-a -mtune=cortex-a8 -mfpu=vfpv3-d16"
+14 ONFIG_CPU_TYPE="cortex-a8+vfpv3"
+15 ONFIG_LINUX_3_18=y
+16 ONFIG_DEFAULT_base-files=y
+17 ONFIG_DEFAULT_busybox=y
+18 ONFIG_DEFAULT_dnsmasq=y
+19 ONFIG_DEFAULT_dropbear=y
+20 ONFIG_DEFAULT_firewall=y
+21 ONFIG_DEFAULT_fstools=y
+22 ONFIG_DEFAULT_ip6tables=y

@@ -1,0 +1,9 @@
+4  console-2017_09_17.log:2017-09-17  00:04:02,655:INFO  :pool-8984-thread-47:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==1031086&items,   response_time=1005,  response_code=200
+5  console-2017_09_17.log:2017-09-17  00:04:02,668:INFO  :pool-8984-thread-50:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==F1018P&items,    response_time=1018,  response_code=200
+1  console-2017_09_17.log:2017-09-17  00:04:02,507:INFO  :pool-8982-thread-30:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==43975&items,     response_time=1030,  response_code=300
+8  console-2017_09_17.log:2017-09-17  00:04:02,686:INFO  :pool-8984-thread-46:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==1563200600&,     response_time=1036,  response_code=200
+6  console-2017_09_17.log:2017-09-17  00:04:02,677:INFO  :pool-8983-thread-86:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==V2581261&items,  response_time=1060,  response_code=200
+2  console-2017_09_17.log:2017-09-17  00:04:02,628:INFO  :pool-8982-thread-77:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==PBD4766&items,   response_time=1142,  response_code=200
+3  console-2017_09_17.log:2017-09-17  00:04:02,651:INFO  :pool-8982-thread-67:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==MDC1810C&items,  response_time=1166,  response_code=200
+7  console-2017_09_17.log:2017-09-17  00:04:02,681:INFO  :pool-8982-thread-68:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==202581&items,    response_time=1196,  response_code=200
+9  console-2017_09_17.log:2017-09-17  00:04:02,693:INFO  :pool-8983-thread-29:r.a.u.j.PerfRequestInterceptor  -  method=GET,  uri==8DB355025371,    response_time=1207,  response_code=200

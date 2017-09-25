@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#echo "Enter a value in \"Dalton\" to convert"
+
+v=$1
+
+echo "$v"
+
+while read -e name; do
+        
+        #result=$("scale=4; ($name/1000)" | bc)
+        result=$(bc <<< "scale=4; ($name/1000)")
+        echo "$result"
+
+done < "$v"

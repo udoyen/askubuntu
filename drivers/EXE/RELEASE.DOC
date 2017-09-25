@@ -1,0 +1,72 @@
+################################################################################
+
+  Title :       RTL8029 Packet Driver Program
+
+  History:      V1.00  --   1995.04.11
+                V1.01  --   1995.08.04
+                V1.02  --   1997.12.24
+                V1.1   --   2000.01.11
+
+   Notes:       All changed codes are marked with the release date 'MM/DD/YY'.
+                In other words, you may search '12/13/94' if you want to find
+                the changed codes of a source program released on 1994.12.13,
+
+################################################################################
+
+  Name:          PCIPKT.100
+
+  Version:       V1.00
+
+  Released By:   Cheng-Ho Tseng
+
+  Release Date:  1995.04.11
+
+  Changed File:
+
+  Reason:        Release Version
+
+################################################################################
+
+  Name:          PCIPKT.101
+
+  Version:       V1.01
+
+  Released By:   Jasper Tan
+
+  Release Date:  1995.08.04
+
+  Changed File:
+
+  Reason:        1. Make it a patch-able driver with RTPATCH.EXE.
+
+################################################################################
+
+  Name:          PCIPKT.102
+
+  Version:       V1.02
+
+  Released By:   Kinston Huang
+
+  Release Date:  1997.12.24
+
+  Changed File:
+
+  Reason:        1. Support Shared Interrupt.
+
+################################################################################
+
+  Name:          PCIPKT.11
+
+  Version:       V1.1
+
+  Released By:   Owen Wei
+
+  Release Date:  2000.01.11
+
+  Changed File:
+
+  Reason:        1. When multi-8029s plugged, user can specify one 8029 card by
+                    specifing the bus number and device number arguments in the
+                    command line.
+
+################################################################################

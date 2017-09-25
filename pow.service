@@ -1,0 +1,16 @@
+[Unit]
+Description = Power nofification daemon
+Requires=acpid.service
+After nework.target
+AssertPathExixts=/usr/local/bin/pow
+
+
+[Service]
+ExecStart = /usr/local/bin/start pow.sh
+ExecStop  = /usr/local/bin/stop pow.sh
+ExecReload = /usr/local/bin/reload pow.sh
+
+
+
+[Install]
+WantedBy = multi-user.target

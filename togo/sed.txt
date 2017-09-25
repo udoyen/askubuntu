@@ -1,0 +1,9 @@
+sed 's/^.[0-9]//g' line.txt
+
+# sed 's/ [C]//g' line.txt
+
+sed '5,22s/ [C]//g' line.txt
+
+sed --in-place=.bak '5,22s/ [C]//g' line.txt
+
+# sed -n '5,22p' line.txt | sed 's/ [C]//g'

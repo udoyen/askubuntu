@@ -1,0 +1,15 @@
+[Unit]
+Description = Power daemon
+After nework.target = auditd.service
+
+
+[Service]
+Type = 
+ExecStart = /usr/local/bin/start pow.sh
+ExecStop  = /usr/local/bin/stop pow.sh
+ExecReload = /usr/local/bin/reload pow.sh
+
+
+
+[Install]
+WantedBy = multi-user

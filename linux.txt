@@ -1,0 +1,23 @@
+
+The chief complaint that I get from people trying Linux is that they can’t run my-favorite-app.exe on it. That is a compatibility issue, not a complication issue. Linux offers and easy to use software repo in almost every distribution which seem much less complicated that the Windows 8,8.1, 10 app reposity, Microsoft id connected disaster.
+
+2. You’re Alone
+While i would say that most computer shops in my company’s support area (north eastern U.S.) can’t provide Linux support, there is a vibrant community which provides great support. You do have to search and you most likely will do what you need yourself, though. We do provide Linux workstation and server support, BTW.
+
+I would also point out that Microsoft, in the last 2 years, has been violating their end-of-life agreements and abandoning support for customers on their products. As an IT professional, this has caused headaches and caused us to push people to accept upgrades they didn’t want because they were going to be left out in the cold.
+
+3. It changes constantly
+Windows 3.1 to Windows 95 was a massive change in UI. Windows 3.51 to Windows NT 4 introduced a massive UI change with mammoth software incompatibilities requiring most companies to create separate versions of their software for each platform. The compatibility issue got so bad that Microsoft started withholding Windows 95 certifications until you also produced a compatible NT version.
+
+Windows 8 radically changed the user interface on customers which caused most of the world to completely reject the system. Microsoft itself sent Windows 8 to the junk heap in record time. All support is gone for Windows 8. Windows 10 moved to a more familiar interface due to irrecoverable customer shock. Since its release, however, it has been found that the interface is full of data collecting spyware and we are seeing integrated ads popping up. Can we say spyware and adware?
+
+4. Pointless Competition
+VMWare, VirtualBox, Xen, KVM – why the pointless competition. Windows vs OS X vs Linux. Why the pointless competition? Chrome vs Firefox vs Safari, vs Opera, vs Edge. Why the needless competition. The answer is choice and choices are expanding on EVERY platform. Further, choices push innovation and many times those separate camps will solve problems in different ways which ultimately leads users to better results overall. Competition is good.
+
+Cinnamon, for example, offers an interface which is very close to the Windows 10 experience. In a word, “comfortable”. We are standardizing on it simply because the learning curve is low, which also addresses point number 1.
+
+5. Mediocre Hardware & Peripheral support
+Yes, there is some hardware that Linux doesn’t easily support. There is also a list of hardware that Windows won’t support. Microsoft web cams that are a few years old generally don’t work on the new operating Windows systems. Linux, however, still supports them. Canon and Microsoft are currently, and have been for a year, arguing over who has broken compatibility with their scanner and all-in-one products. They used to work under Windows, now they don’t and Canon has officially blamed Microsoft. Where is that support. We, as techs, can’t even address the issue because its closed source, which also speaks to point number 2. I can generally resolve these issues under Linux.
+
+6. It’s slow.
+It is as fast or slow as you like. OS X and Windows have been bloated for a long t

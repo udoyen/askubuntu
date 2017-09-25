@@ -1,0 +1,28 @@
+echo  r1=${PWD/PWD##*/} /home/george/Documents/askubuntu/bbc/2017-09-19.21.00.3-0.rec
+
+2017-09-19.21.00.3-0.rec r=${PWD##*/}
+
+
+ [[ "/home/george/Documents/askubuntu/bbc/2017-09-19.21.00.3-0.rec" =~ [0-9]{4}-([0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}).* ]]
+ 
+ [[ "/home/george/Documents/askubuntu/bbc/2017-09-19.21.00.3-0.rec" =~ (bbc) ]]
+ 
+ mkdir newpath
+ 
+ for i in ./*/*; do
+        # change into dir
+        cd ./*/*
+        # get path to file
+        r1=${PWD/PWD##*/}
+        # get the names for rename file
+        f1=$([[ "/home/george/Documents/askubuntu/bbc/2017-09-19.21.00.3-0.rec" =~ [0-9]{4}-([0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}).* ]])
+        f2=$([[ "/home/george/Documents/askubuntu/bbc/2017-09-19.21.00.3-0.rec" =~ (bbc) ]])
+        # Rename the files
+        rename -n 's/[0-9]{1,}.txt$/f2__f1__.txt/' *.txt
+        
+        # move to new location
+        mv ../../newpath
+done
+        
+        
+        

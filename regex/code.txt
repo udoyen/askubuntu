@@ -1,0 +1,1 @@
+sed -r 's/^(>)UniRef90_([A-Z0-9]{6}).*Tax=([a-z]+)TaxID=.*/\1 \2 \3/ig'

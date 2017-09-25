@@ -1,0 +1,7 @@
+`shm / shmfs`: is also known as tmpfs, which is a common name for a temporary file storage facility on many Unix-like operating systems. It is intended to appear as a mounted file system, but one which uses virtual memory instead of a persistent storage device.
+
+So from the above the applications using the `/dev/shm` must be doing _in house_ cleaning as they add and remove data as needed. `/run/shm -> /dev/shm`: is an implementation of `tmpfs` done by Debian, where `/run/shm` replaces old style `/dev/shm` so no hassles here.
+
+
+
+

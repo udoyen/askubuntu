@@ -1,0 +1,11 @@
+        GRUB_CMDLINE_LINUX_DEFAULT="text"
+        GRUB_CMDLINE_LINUX="text"
+2. Then set the default runlevel with `systemd`:
+
+        sudo systemctl set-default multi-user.target
+3. Reboot
+
+4. To return to normal `graphic mode`:
+
+        sudo systemctl set-default graphical.target
+ 

@@ -1,0 +1,25 @@
+# My SSH user configurations
+#
+Host *
+    ServerAliveInterval 60
+
+
+Host genbrooke.com
+    Hostname de6.fcomet.com
+    Port 17177
+    User genbrook
+
+Host ensign.org
+    Hostname s7.fcomet.com
+    Port 17177
+    User ensignho
+
+Host archlinux
+    Hostname 127.0.0.1
+    Port 3333
+    User george
+
+Host ubserver
+    Hostname 127.0.0.1
+    Port 2222
+    User george

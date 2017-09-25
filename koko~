@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ls j1
+
+cat koko2 >> ker

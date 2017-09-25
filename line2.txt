@@ -1,0 +1,18 @@
+     5  CONFIG_MODULES=y
+     6  CONFIG_HAVE_DOT_CONFIG=y
+     7  CONFIG_TARGET_sunxi=y
+     8  # CONFIG_TARGET_sunxi_BPI-M1-Plus is not set
+     9  CONFIG_TARGET_sunxi_BPI-M1=y
+    10  # CONFIG_TARGET_sunxi_BPI-R1 is not set
+    11  CONFIG_TARGET_BOARD="sunxi"
+    12  CONFIG_TARGET_ARCH_PACKAGES="sunxi"
+    13  CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -march=armv7-a -mtune=cortex-a8 -mfpu=vfpv3-d16"
+    14  CONFIG_CPU_TYPE="cortex-a8+vfpv3"
+    15  CONFIG_LINUX_3_18=y
+    16  CONFIG_DEFAULT_base-files=y
+    17  CONFIG_DEFAULT_busybox=y
+    18  CONFIG_DEFAULT_dnsmasq=y
+    19  CONFIG_DEFAULT_dropbear=y
+    20  CONFIG_DEFAULT_firewall=y
+    21  CONFIG_DEFAULT_fstools=y
+    22  CONFIG_DEFAULT_ip6tables=y

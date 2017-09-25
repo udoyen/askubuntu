@@ -1,0 +1,141 @@
+    Linux 4.4.0-64-generic (george-HP-Pavilion-17-Notebook-PC) 	04/03/2017 	_x86_64_	(4 CPU)
+
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               4.56    0.02    2.17    1.67    0.00   91.59
+
+    Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+    loop0             0.00         0.02         0.00       1093          0
+    loop1             0.04         0.04         0.00       1799          0
+    loop2             0.18         0.20         0.00       9607          0
+    loop3             0.00         0.02         0.00       1079          0
+    loop4             0.00         0.00         0.00        108          0
+    sda               7.70        87.28       178.21    4194476    8564449
+    scd1              0.00         0.00         0.00        166          0
+
+
+Capture in `megabytes`:
+
+   $ iostat -m
+
+    Linux 4.4.0-64-generic (george-HP-Pavilion-17-Notebook-PC) 	04/03/2017 	_x86_64_	(4 CPU)
+    
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               4.56    0.02    2.17    1.67    0.00   91.59
+    
+    Device:            tps    MB_read/s    MB_wrtn/s    MB_read    MB_wrtn
+    loop0             0.00         0.00         0.00          1          0
+    loop1             0.04         0.00         0.00          1          0
+    loop2             0.18         0.00         0.00          9          0
+    loop3             0.00         0.00         0.00          1          0
+    loop4             0.00         0.00         0.00          0          0
+    sda               7.69         0.09         0.17       4096       8370
+    scd1              0.00         0.00         0.00          0          0
+
+
+Extend report with `-x parameter`:
+
+   iostat -x
+
+
+    Linux 4.4.0-64-generic (george-HP-Pavilion-17-Notebook-PC) 	04/03/2017 	_x86_64_	(4 CPU)
+    
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               4.56    0.02    2.17    1.67    0.00   91.59
+    
+    Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+    loop0             0.00     0.00    0.00    0.00     0.02     0.00    28.76     0.00   53.89   53.89    0.00  28.74   0.00
+    loop1             0.00     0.00    0.04    0.00     0.04     0.00     2.09     0.00   76.24   76.24    0.00   3.18   0.01
+    loop2             0.00     0.00    0.18    0.00     0.20     0.00     2.23     0.00   20.97   20.97    0.00   1.22   0.02
+    loop3             0.00     0.00    0.00    0.00     0.02     0.00    25.69     0.00   47.00   47.00    0.00  32.43   0.01
+    loop4             0.00     0.00    0.00    0.00     0.00     0.00     6.55     0.00   42.30   42.30    0.00  28.97   0.00
+    sda               0.36     7.68    3.05    4.64    87.12   178.06    68.95     0.29   37.84   35.88   39.14   4.88   3.75
+    scd1              0.00     0.00    0.00    0.00     0.00     0.00     9.49     0.00   11.20   11.20    0.00  10.17   0.00
+
+   
+
+Add delay to result ouput. This will produce 3 reports with 2 seconds interval:
+
+   $ iostat -k 2 3
+
+
+    Linux 4.4.0-64-generic (george-HP-Pavilion-17-Notebook-PC) 	04/03/2017 	_x86_64_	(4 CPU)
+    
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               4.56    0.02    2.17    1.67    0.00   91.59
+    
+    Device:            tps    MB_read/s    MB_wrtn/s    MB_read    MB_wrtn
+    loop0             0.00         0.00         0.00          1          0
+    loop1             0.04         0.00         0.00          1          0
+    loop2             0.18         0.00         0.00          9          0
+    loop3             0.00         0.00         0.00          1          0
+    loop4             0.00         0.00         0.00          0          0
+    sda               7.69         0.09         0.17       4096       8375
+    scd1              0.00         0.00         0.00          0          0
+    
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               4.03    0.00    1.64    0.63    0.00   93.70
+    
+    Device:            tps    MB_read/s    MB_wrtn/s    MB_read    MB_wrtn
+    loop0             0.00         0.00         0.00          0          0
+    loop1             0.00         0.00         0.00          0          0
+    loop2             0.00         0.00         0.00          0          0
+    loop3             0.00         0.00         0.00          0          0
+    loop4             0.00         0.00         0.00          0          0
+    sda               1.50         0.00         0.01          0          0
+    scd1              0.00         0.00         0.00          0          0
+    
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               3.16    0.00    2.28    0.51    0.00   94.06
+    
+    Device:            tps    MB_read/s    MB_wrtn/s    MB_read    MB_wrtn
+    loop0             0.00         0.00         0.00          0          0
+    loop1             0.00         0.00         0.00          0          0
+    loop2             0.00         0.00         0.00          0          0
+    loop3             0.00         0.00         0.00          0          0
+    loop4             0.00         0.00         0.00          0          0
+    sda               0.50         0.00         0.00          0          0
+    scd1              0.00         0.00         0.00          0          0
+
+
+Now to see it continuously with 2 seconds interval:
+
+   $ iostat 2
+
+
+Here's how to read iostat reports
+
+    The first section contains CPU report
+    
+    %user : show the percentage of CPU utilization that occured while executing at the user (application) level
+    %nice : show the percentage of CPU utilization that occured while executing at the user level with nice priority
+    %system : show the percentage of CPU utilization that occured while executing at the system (kernel) level
+    %iowait : show the percentage of the time that the CPU or CPUs were idle during whcih the system had an outstanding disk I/O request
+    %steal : show the percentage of time spent in involuntary wait by the virtual CPU or CPUs while the hypervisor was servicing another virtual processor
+    %idle : show the percentage of time that the CPU or CPUs were idle and the system did not have an outstanding disk I/O request
+    The second section contains device utilization report
+    
+    Device : device / partition name as listed in /dev directory
+    tps : show the number of transfers per second that were issued to the device. Higher tps means the processor is busier
+    Blk_read/s : show the amount of data read from the device expressed in a number of blocks (kilobytes, megabytes) per second
+    Blk_wrtn/s : show the amount of data written to the device expressed in a number of blocks (kilobytes, megabytes) per second
+    Blk_read : show the total number of blocks read
+    Blk_wrtn : show the total number of blocks written
+
+
+For the second part of your question:
+
+__CFQ [cfq]__ (Completely Fair Queuing) is an I/O scheduler for the Linux kernel and default under many Linux distributions.
+
+   - Noop scheduler (noop) is the simplest I/O scheduler for the Linux kernel based upon FIFO queue concept.
+
+   - Anticipatory scheduler (anticipatory) is an algorithm for scheduling hard disk input/output as well as old scheduler which is replaced by CFQ
+
+   - Deadline scheduler (deadline) – it attempt to guarantee a start service time for a request.
+
+To see your current disk scheduler:
+
+   sudo cat /sys/block/{DEVICE-NAME}/queue/scheduler
+
+   # where device name is [sda | sdb | ...]
+
+

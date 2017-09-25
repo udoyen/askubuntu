@@ -1,0 +1,19 @@
+[Unit]
+Description = node service
+Requires=After=mysql.service
+
+
+
+[Service]
+ExecStart=/root/node/node_modules/.bin/www
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+
+
+Environment=NODE_ENV=production PORT=1337
+
+
+[Install]
+WantedBy = multi-user.target
