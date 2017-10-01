@@ -1,0 +1,8 @@
+media sound3
+media sound1
+media sound2
+media sound3
+media sound1
+media sound2
+find sound -type f -name sound[0-9] -exec bash -c f='{}'; echo media $( basename ${f}) >> file.txt ;
+find sound -type f -name sound[0-9] -exec bash -c "f='{}'; echo media $( basename ${f}) >> file.txt" \;

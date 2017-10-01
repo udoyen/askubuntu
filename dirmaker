@@ -1,0 +1,1 @@
+mkdir currentDir/{Dir1/{Dir1/Dir1/Texture,Dir2/Texture,Dir3/Texture},Dir2/{Dir1/Texture,Dir2/Dir1/Texture},Dir3/Texture}
